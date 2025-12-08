@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Laundry Wallah / Laundry Mart</title>
+
+<style>
+    body{
+        margin:0;
+        font-family: Poppins, sans-serif;
+        background:#e9faff;
+        overflow-x:hidden;
+    }
+
+    /* Animated Bubbles */
+    .bubbles span{
+        position:fixed;
+        bottom:-100px;
+        width:30px;
+        height:30px;
+        border-radius:50%;
+        background:rgba(255,255,255,0.6);
+        box-shadow:0 0 10px rgba(255,255,255,.8);
+        animation: rise linear infinite;
+        filter:blur(0.3px);
+    }
+    /* Different bubble sizes + speed */
+    .bubbles span:nth-child(1){left:5%;width:18px;height:18px;animation-duration:9s;}
+    .bubbles span:nth-child(2){left:15%;width:22px;height:22px;animation-duration:11s;}
+    .bubbles span:nth-child(3){left:30%;width:14px;height:14px;animation-duration:8s;}
+    .bubbles span:nth-child(4){left:45%;width:25px;height:25px;animation-duration:12s;}
+    .bubbles span:nth-child(5){left:60%;width:20px;height:20px;animation-duration:10s;}
+    .bubbles span:nth-child(6){left:75%;width:16px;height:16px;animation-duration:7s;}
+    .bubbles span:nth-child(7){left:85%;width:26px;height:26px;animation-duration:13s;}
+    .bubbles span:nth-child(8){left:95%;width:14px;height:14px;animation-duration:8s;}
+
+    @keyframes rise{
+        0%{transform:translateY(0) scale(1);opacity:.8;}
+        50%{opacity:0.55;}
+        100%{transform:translateY(-120vh) scale(1.6);opacity:0;}
+    }
+
+    /* Glass White Laundry Card */
+    section{
+        width:75%;
+        margin:70px auto;
+        background:rgba(255,255,255,0.92);
+        padding:45px;
+        border-radius:18px;
+        backdrop-filter:blur(8px);
+        box-shadow:0 0 30px rgba(0,0,0,.15);
+        animation:fadeUp 1.3s ease;
+    }
+    @keyframes fadeUp{
+        0%{opacity:0;transform:translateY(30px);}
+        100%{opacity:1;transform:translateY(0);}
+    }
+
+    h2{text-align:center;color:#008ad8;font-size:32px;margin:5px 0;}
+    p{text-align:center;font-size:18px;margin-bottom:30px;color:#333;}
+    img{display:block;margin:auto;width:250px;margin-bottom:15px;}
+
+    table{width:100%;border-collapse:collapse;font-size:18px;margin-top:10px;}
+    th{background:#00a5ff;color:white;padding:12px;}
+    td{padding:12px;border:1px solid #ccc;}
+
+    ol li{font-size:19px;margin:8px;}
+
+    .form-box{width:65%;margin:auto;margin-top:30px;}
+    input,select{
+        width:100%;padding:12px;margin:8px 0;border-radius:6px;
+        border:1px solid #bbb;font-size:16px;transition:.3s;
+    }
+    input:focus,select:focus{
+        border-color:#00a5ff;box-shadow:0 0 8px rgba(0,173,255,.5);
+    }
+    input[type="submit"]{
+        background:#009cf5;border:none;padding:14px;
+        color:white;font-size:19px;font-weight:600;margin-top:12px;
+        cursor:pointer;transition:.3s;
+    }
+    input[type="submit"]:hover{background:#0078c9;transform:scale(1.04);}
+</style>
+</head>
+
+<body>
+
+<!-- BUBBLE ANIMATION SECTION -->
+<div class="bubbles">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+</div>
+
+<section>
+    <h2>About Laundry Wallah / Laundry Mart</h2>
+    <p>Fresh. Clean. Delivered. Your trusted laundry care with fabric quality assurance.</p>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/026/721/193/small/washing-machine-and-laundry-laundry-sticker-png.png">
+
+    <h2>OUR SERVICES</h2>
+    <ol>
+        <li>Wash & Fold</li>
+        <li>Dry Cleaning</li>
+        <li>Ironing Services</li>
+        <li>Pickup & Delivery</li>
+    </ol>
+
+    <h2>PRICE LIST</h2>
+    <table>
+        <tr><th>Service</th><th>Price ₹</th></tr>
+        <tr><td>Wash & Fold</td><td>10</td></tr>
+        <tr><td>Dry Cleaning</td><td>15</td></tr>
+        <tr><td>Ironing</td><td>12</td></tr>
+        <tr><td>Pickup & Delivery</td><td>5</td></tr>
+    </table>
+
+    <h2>BOOK NOW</h2>
+    <div class="form-box">
+        <input type="text" placeholder="Full Name">
+        <input type="email" placeholder="Email Address">
+        <input type="tel" placeholder="Phone Number">
+        <input type="date">
+        <input type="date">
+        <select>
+            <option>Wash & Fold</option>
+            <option>Dry Cleaning</option>
+            <option>Ironing Services</option>
+            <option>Pickup & Delivery</option>
+        </select>
+        <input type="submit" value="Book Now">
+    </div>
+</section>
+</body>
+</html>
