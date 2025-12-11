@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSINGMENT3</title>
+</head>
+<style>
+    h1 {
+        background-color: rgb(37, 42, 42);
+        text-align: center;
+        font-size: 50px;
+        color: aliceblue;
+    }
+
+
+
+    body {
+        background-color: rgb(179, 179, 179);
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 20px;
+        margin: 30px;
+        text-align: center;
+    }
+
+    input {
+        padding: 10px;
+        font-size: 18px;
+        border-radius: 5px;
+        border: 1px solid #444;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 18px;
+        margin-left: 10px;
+        cursor: pointer;
+        border: none;
+        background: #333;
+        color: white;
+        border-radius: 5px;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+    }
+
+    .box {
+        width: 120px;
+        height: 120px;
+        border: 2px solid #333;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+        background: white;
+        border-radius: 10px;
+    }
+</style>
+
+<body>
+    <div>
+        <h1 id="header">hallo!</h1>
+    </div>
+    <div>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="greetUser()">Greet</button>
+
+        
+    </div>
+    <div class="container">
+        <div class="box" id="redBox" onclick="changeBoxColor(this)">Red</div>
+        <div class="box" id="greenBox" onclick="changeBoxColor(this)">Green</div>
+        <div class="box" id="blueBox" onclick="changeBoxColor(this)">Blue</div>
+        <div class="box" id="yellowBox" onclick="changeBoxColor(this)">Yellow</div>
+    </div>
+
+    <script>
+        function greetUser() {
+            let name = document.getElementById("nameInput").value;
+            document.getElementById("header").innerText = "Hello, " + name;
+        }
+        function changeBoxColor(el) {
+            const map = {
+                redBox: 'red',
+                blueBox: 'blue',
+                greenBox: 'green',
+                yellowBox: 'yellow'
+            };
+            const currentColor = el.style.backgroundColor;
+            const targetColor = map[el.id];
+            if (currentColor === targetColor) {
+                el.style.backgroundColor = 'white';
+            } else {
+                el.style.backgroundColor = targetColor;
+            }
+        }
+       
+    </script>
+</body>
+
+</html>
